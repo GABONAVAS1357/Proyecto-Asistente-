@@ -1,21 +1,15 @@
 # -*- coding: utf-8 -*-
 
-import mysql.connector
 import datetime
+import usuarios.conexion as conexion
 
-database = mysql.connector.connect(
-    host ="localhost",
-    user = "root",
-    passwd = "",
-    database = "asistente_virtual",
-    port = 3306
-)
-print(database)
-cursor = database.cursor(buffered=True)
+connect = conexion.conectar()
+database = connect[0]
+cursor = connect[1]
 
 class Usuario:
 
-    def __init__(self, nombres, apellidos, email, password):
+    def __init__(self, nombre, apellidos, email, password):
         self.nombre = nombre
         self.apellidos = apellidos
         self.email = email

@@ -15,7 +15,7 @@ class Acciones:
         registro = usuario.registrar()
     
         if registro[0] >= 1:
-            print("perfecto {registro[1].nombre} te has registrado con el email {registro[1].email}")
+            print(f"perfecto {registro[1].nombre} te has registrado con el email {registro[1].email}")
         else:
             print("No te has registrado correctamente")
      
@@ -26,5 +26,7 @@ class Acciones:
     
     def error(self):
         print("Por favor solo introduce una de las 2 opciones indicadas")
+        
+        
 
     
